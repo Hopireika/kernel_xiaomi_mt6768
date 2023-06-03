@@ -127,3 +127,6 @@ kernel/configs/android-*.cfg
 
 # ignore out dir
 out/
+
+# KernelSU
+KernelSU/
