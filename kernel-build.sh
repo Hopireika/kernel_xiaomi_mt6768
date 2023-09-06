@@ -21,8 +21,8 @@ AUTHOR="Kizziama"
 ARCH=arm64
 DEFCONFIG="merlin_defconfig"
 COMPILER="dtc"
-LTO="0"
-POLLY="0"
+LTO="1"
+POLLY="1"
 KERNELSU="1"
 LINKER=ld.lld
 
@@ -92,7 +92,7 @@ clone() {
 	fi
 
 	if [[ $LTO == "1" ]]; then
-		if [[ $COMPILER == "clang" || $COMPILER == "neutron" ]]; then
+		if [[ $COMPILER == "clang" || $COMPILER == "neutron" || $COMPILER == "dtc" ]]; then
 			echo "CONFIG_LTO_CLANG=y" >>arch/arm64/configs/$DEFCONFIG
 			echo "CONFIG_LTO=y" >>arch/arm64/configs/$DEFCONFIG
 		else
@@ -101,7 +101,7 @@ clone() {
 	fi
 
 	if [[ $POLLY == "1" ]]; then
-		if [[ $COMPILER == "clang" || $COMPILER == "neutron" ]]; then
+		if [[ $COMPILER == "clang" || $COMPILER == "neutron" || $COMPILER == "dtc" ]]; then
 			echo "CONFIG_LLVM_POLLY=y" >>arch/arm64/configs/$DEFCONFIG
 		fi
 	fi
