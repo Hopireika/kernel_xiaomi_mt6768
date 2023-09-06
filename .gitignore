@@ -130,3 +130,12 @@ out/
 
 # KernelSU
 KernelSU/
+
+# ignore toolchains dir
+clang-llvm
+gcc32
+gcc64
+AnyKernel3
+error.log
+Telegram
+localversuion
