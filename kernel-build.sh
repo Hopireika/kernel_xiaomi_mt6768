@@ -266,7 +266,7 @@ push() {
 	# Create kernel info
 	echo -e "\n\e[1;93m[*] Generate source changelogs! \e[0m"
 	cfile="kernel-info-$ZDATE.md"
-	log="$(git log --oneline -n 10)"
+	log="$(git log --oneline -n 20)"
 	flog="$(echo "$log" | sed -E 's/^([a-zA-Z0-9]+) (.*)/* \2/')"
 
 	touch $cfile
